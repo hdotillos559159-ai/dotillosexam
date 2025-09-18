@@ -1,0 +1,106 @@
+package system;
+import java.util.ArrayDeque;
+import java.util.Scanner;
+
+	
+public class Warehouse {
+	private static ArrayDeque<StoreItem> warehouseStack = new ArrayDeque<>();
+	private static ArrayDeque<Trucks> truckQueue = new ArrayDeque<>();
+	private static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		int choice;
+		
+		do  {
+			System.out.println("\n=== Warehouse Loading System ===");
+			System.out.println("[1] Store item (push)");
+			System.out.println("[2] View warehouse stack");
+			System.out.println("[3] Register arriving truck (enqueue)");
+			System.out.println("[4] View waiting trucks");
+			System.out.println("[5] Load next truck (pop item + poll truck");
+			System.out.println("[0] Exit");
+			System.out.println("Enter choice: ");
+			sc.nextInt();
+			
+			switch (choice) {
+			case 1:
+				storeItem();
+				break;
+			
+			
+			
+			
+		
+		}while(choice != 0)
+	
+	}
+
+	
+	public static void storeItem() {
+		System.out.println("Enter Code: ");
+		String code = sc.nextLine();
+		System.out.println("Enter Name: ");
+		String name = sc.nextLine();
+		System.out.println("Enter quantity: ");
+		int qty = sc.nextInt();
+		
+		
+		StoreItem wh = new StoreItem(code,name,qty); 
+		warehouseStack.push(wh);
+		
+		System.out.println("Stored: " + warehouseStack);
+		}		
+	
+	public static void viewWarehouse() {
+		if(warehouseStack.isEmpty()) {
+			System.out.println("Empty Warehouse");
+		}
+		for (StoreItem w : warehouseStack);
+		char[] w = null;
+		System.out.println(w);
+		
+		
+	}
+	
+	public static void registerTruck() {
+		System.out.println("Enter Truck Plate: ");
+		String plate = sc.nextLine();
+		System.out.println("Enter Driver Name: ");
+		String name = sc.nextLine();
+		
+		Trucks tr = new Trucks(plate,name);
+		truckQueue.poll();
+		System.out.println("Registered: " + plate + " | " + plate + name);
+	}
+	
+	
+	
+				
+			
+	
+			
+		
+	
+	
+
+		
+	
+			
+				
+			
+			
+			
+	
+		
+		
+
+		
+	
+
+}
+
+
+
+
+
+
