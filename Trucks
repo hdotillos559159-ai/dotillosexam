@@ -1,0 +1,17 @@
+package system;
+
+public class Trucks {
+		private String plate;
+		private String name;
+		
+		public Trucks(String plate, String name) {
+			this.plate = plate;
+			this.name = name;
+		}
+		@Override
+		public String toString() {
+			return plate + " | " + name;
+			
+		}
+	}
+
